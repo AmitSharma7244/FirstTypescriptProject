@@ -14,7 +14,7 @@ export const getElementCSSSelector = (attribute: string, elementName?: string, t
         cssSelector = `data-testid=${linkCSSProperties.dataTestId.replace("${value}", elementName)}`;
     }
     else if(attribute === "class") {
-        cssSelector = linkCSSProperties.class;
+        cssSelector = `.${linkCSSProperties.class}`;
     }
     else if(typeof tagName !== "undefined" && attribute === "tag") {
         cssSelector = tagName;

@@ -1,0 +1,71 @@
+Input == .//input[@data-testid='${value}-input-input']
+//input_Age == .//input[@data-testid='age-input-input'] 
+input_Salary == .//input[@data-testid='salary-input-input']
+input_Password == .//input[@data-testid='password-input-input']
+inplaceEdit == .//div[@data-testid='target-inplaceEdit']
+inplaceEditSpan == .//span[@data-testid='target-inplaceEdit']
+inplaceEditInput == .//input[@data-testid = 'target-input']
+requiredInput == .//input[@data-testid = 'required-input-input']
+emailInput == .//input[@data-testid = 'email-input-input']
+passwordInput == .//input[@data-testid = 'password-input-input']
+phoneInput == .//input[@data-testid = 'phone-input-input']
+numericInput == .//input[@data-testid = 'numeric-input-input']
+suggestionsInput == .//input[@data-testid = 'suggestions-list-input-input']
+suggestionListInplaceEditSpan == .//span[@data-testid = "suggestions-list-input-inplaceEdit"]
+suggestionsListDropdownValue == .//ul[@data-testid='suggestions-list-input-suggestionPopper-list']/li/span[text()="${value}"]
+suggestionsListDropdown == .//div[@data-testid = 'suggestions-list-input-suggestionPopper-optionPopper']
+
+errMsg == .//span[@data-testid='${value1}-input-messagePopper-messageContainer']
+salErrMessage == .//span[@data-testid='salary-input-messagePopper-messageContainer']
+PassMsg == .//span[@data-testid='password-input-messagePopper-messageContainer']
+requiredMessage == .//span[@data-testid = 'required-input-messagePopper-messageContainer']
+emailErrMessage == .//span[@data-testid='email-input-messagePopper-messageContainer']
+
+numericStepperDecrementButton == .//button[@data-testid = "${value}-numericStepper-decrementButton"]
+numericStepperIncrementButton == .//button[@data-testid = "${value}-numericStepper-incrementButton"]
+minDecrement == min-numericStepper-decrementButton
+maxDecrement == max-numericStepper-decrementButton
+minIncrement == min-numericStepper-incrementButton
+maxIncrement == max-numericStepper-incrementButton
+
+suggestionInput == .//input[@id='sas_RC-withLabels-0']
+//suggestionInput ==.//input[@data-testid='suggestions-list-input']
+suggestionReason == .//input[@class='sas_components-Heading-Heading_text']
+reason-blur == .//input[@data-testid='reason-blur']
+ErrMessage == .//div[@data-testid='${value}--messageContainer']
+suggestionRadio1 == .//input[@id = "sas_RC-RadioButton-0"]
+suggestionRadio3 == .//input[@id = "sas_RC-RadioButton-3"]
+
+liveValue == .//h4[@data-testid='liveValue-${value}']
+commitedValue == .//h4[@data-testid='committedValue-${value}']
+
+requiredLabel==.//div[@data-testid='required-input-withLabels-label']  
+warningLabel== .//div[@data-testid='warning-input-withLabels-label']
+editButton==.//button[@data-testid='edit-button']
+textEditor == .//div[@class='textviewContent']  
+codeEditorArea == //*[ @data-testid = 'codeEditor' ]//descendant::*[ @class = 'textviewContent' ]
+btnApply == .//button[@class='sas_components-Snippet-Snippet_toolbar-button sas_components-Button-__internal__-BaseButton_button']
+btnReset == .//button[@data-testid='reset-button']
+formatP == .//button[@data-testid='formatButton']
+
+inputContainer == .//div[@id='input-${value}']
+inputBasicContainer == .//div[@id='input-basic']
+inputWarningContainer == .//div[@id='input-warning-message']
+inputStatesContainer == .//div[@id='input-states']
+inputSuggestionsContainer == .//div[@id='input-suggestions']
+inputInplaceEditContainer == .//div[@id='input-inplaceedit']
+inputNumericContainer == .//div[@id='input-numeric']
+
+snippetContainer == .//div[@id='snippet-container']
+snippetDialog == .//div[@class='sas_components-Dialog-Dialog_dialog-inner']
+
+snippetInputDlg== (.//input[@data-testid='suggestions-list-input-input'])[2]
+snippetInputDlgContainer== .//div[@role='dialog']
+snippetInputDlgBtn== .//span[contains(text(),'Open Dialog')]
+
+snippetInputSuggestion== .//input[@data-testid='suggestions-list-input-input']
+
+snippetView== .//button[contains(@data-testid,'snippetTool-windowShade-section-1-action-button')]
+snippetShowDlg== .//span[contains(text(),'Show Dialog')]
+snippetInput== .//input[@aria-label='Name']
+snippetDesc== .//input[@aria-label='Description']

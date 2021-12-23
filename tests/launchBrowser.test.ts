@@ -13,19 +13,19 @@ describe("Launch browser", () => {
             height: 600
         });
 
-        console.log("Going to the page");
+        await console.log("Going to the page");
         await page.goto("http://nc.sas.com/builds/published/latest/NovaShowcase/#/iso/Link/Basic");
 
-        console.log("Getting the element")
+        await console.log("Getting the element")
         let element: string;
 
         // element = getElementTextSelector("Link text");
         // element = getElementCSSSelector("id", "basic");
-        // element = getElementCSSSelector("class", "small");
+        element = getElementCSSSelector("class", "small");
         // element = getElementCSSSelector("tag");
-        element = getElementXPathSelector("link", "basic");
+        // element = getElementXPathSelector("link", "basic");
 
-        console.log("Clicking on the link");
+        await console.log("Clicking on the link");
         await page.click(element);
 
         // console.log("Filling the input");
