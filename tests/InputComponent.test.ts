@@ -1,4 +1,5 @@
 import { Browser, BrowserContext, chromium, Page } from "playwright";
+import { setMap } from "../utilities/ParseAndMap";
 
 describe("Input component test", () => {
 
@@ -20,9 +21,12 @@ describe("Input component test", () => {
 
     test("Fill a basic input", async () => {
         
-        await page.goto("http://nc.sas.com/builds/published/latest/NovaShowcase/#/iso/Input/Basic");
-
+        // await page.goto("http://nc.sas.com/builds/published/latest/NovaShowcase/#/iso/Input/Basic");
+        await page.goto("https://facebook.com");
         let element: string = "";
+
+        let filePath = "C:/Users/sinmmi/PlaywrightProjects/FirstPlaywrightProject/MapFiles/InputMap.txt";
+        setMap(filePath);
 
         await page.fill(element, "Hello");
 

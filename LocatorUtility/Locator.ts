@@ -1,4 +1,4 @@
-import { linkCSSProperties, linkXPaths } from "../MapFiles/LinkMap";
+import { linkCSSProperties } from "../MapFiles/LinkMap";
 
 export const getElementTextSelector = (textValue: string) => {
     let textSelector = 'text="' + textValue + '"';
@@ -11,10 +11,11 @@ export const getElementCSSSelector = (attribute: string, elementName?: string, t
     if(typeof elementName !== "undefined" && attribute === "id") {
         // cssSelector = 'data-testid=' + elementName + '-link';
         // cssSelector = `data-testid=${linkDataTestId.replace("${value}", elementName)}`;
-        cssSelector = `data-testid=${linkCSSProperties.dataTestId.replace("${value}", elementName)}`;
+        // cssSelector = `data-testid=${linkCSSProperties.dataTestId.replace("${value}", elementName)}`;
+        cssSelector = `data-testid=${linkCSSProperties.get("dataTestId").replace("#{value}", elementName)}`;
     }
     else if(attribute === "class") {
-        cssSelector = `.${linkCSSProperties.class}`;
+        cssSelector = `.${linkCSSProperties.get("class")}`;
     }
     else if(typeof tagName !== "undefined" && attribute === "tag") {
         cssSelector = tagName;
@@ -25,7 +26,7 @@ export const getElementCSSSelector = (attribute: string, elementName?: string, t
 export const getElementXPathSelector = (mapKey: string, elementName?: string) => {
     let xpathSelector: string = "";
     if(typeof elementName !== "undefined") {
-        xpathSelector = linkXPaths.link.replace("${value}", elementName);
+        // xpathSelector = linkXPaths.link.replace("${value}", elementName);
     }
 
     return xpathSelector;

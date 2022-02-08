@@ -1,8 +1,32 @@
-import { open } from "fs/promises";
-const InputMap = new Map();
+import { readFile } from "fs";
+const inputMap = new Map();
 
-const setMap = (filePath: string) => {
-    let file = open("../MapFiles/InputMap.txt", "r");
+export const setMap = async (filePath: string) => {
+    await readFile(filePath, async (error, data) => {
+        if(error) {
+            console.log("Error == " + error);
+            return error;
+        }
 
-    console.log(file);
+        
+    });
 };
+
+const prepareMapFile = (data: string) => {
+    let fileContents = data.toString();
+
+    fileContents.split("\n").forEach( (line) => {
+        if(line.startsWith("//")) {
+            console.log("Skip");
+        }
+        else if(line.length <= 1) {
+            console.log("Empty");
+        }
+        else {
+            let keyValuePair = line.split("==");
+            inputMap.set(keyValuePair[0].trim(), keyValuePair[1].trim());
+        }
+    });
+
+    console.log(inputMap);
+}
